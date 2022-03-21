@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  ldap:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - 389:389
+      - 636:636
+ #   volumes:
+ #     - ./.dbdata:/opt/jboss/keycloak/standalone/data

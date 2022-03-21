@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - 8080:8080
+      - 8443:8443
+ #   volumes:
+ #     - ./.dbdata:/opt/jboss/keycloak/standalone/data
+    environment:
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+
