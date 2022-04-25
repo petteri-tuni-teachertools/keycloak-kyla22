@@ -12,4 +12,16 @@ services:
     environment:
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
-
+  ldap:
+    build:
+      context: .
+      dockerfile: ./ldap/Dockerfile
+    ports:
+      - 389:389
+      - 636:636
+  js-console:
+    build:
+      context: .
+      dockerfile: ./js-console/Dockerfile
+    ports:
+      - 8000:80
